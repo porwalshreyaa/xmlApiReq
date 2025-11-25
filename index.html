@@ -8,7 +8,7 @@
   <body style="background-color: #212121; color: aliceblue">
     <div style="padding: 10px; font-family: sans-serif;">
       <div style="text-align: center; padding: 5px">
-        <input type="text" id="url" placeholder="input your github url" style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; width: 180px; "/>
+        <input type="text" id="url" placeholder="Your Github Username" style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; width: 180px; "/>
         <button style="padding: 6px 12px; background-color: #313131; color: white; border: 1px solid #fff; border-radius: 8px; cursor: pointer;">generate card</button>
       </div>
       <div id="card" style="text-align: center; margin-top: 10px;"></div>
@@ -70,7 +70,7 @@ document.getElementById("card").innerHTML = html ;
     };
     const getUrl = function () {
       const inputValue = document.getElementById("url").value;
-      makeReq(inputValue);
+      makeReq("https://api.github.com/users/" + inputValue);
     };
     document.querySelector("button").addEventListener("click", getUrl);
   </script>
